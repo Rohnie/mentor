@@ -1,0 +1,104 @@
+<html>
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/popup1.controller.js"></script>
+</head>
+<body ng-app="popup1MyApp" ng-controller="popup1MyCtrl">
+
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+
+
+				<h4 class="modal-title">
+					Define Relative Data <a type="button" class="btn btn1"
+						href="main1.html">&times;</a>
+				</h4>
+
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">Please define multiple relative dates
+						by selecting a starting date type, then adding or subtracting
+						days, months or years to get the desired resulting date. Press Get
+						Results to confirm a date calculation.</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">Select 1 or 2 dates below</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						Starting Date Type<br> <select ng-model="selectedday"
+							ng-options="x for x in days">
+						</select>
+					</div>
+					<div class="col-md-1">
+						Day+/-<br> <input type="number" ng-init="sday = 0" min="-10"
+							max="10" ng-model="sday">
+					</div>
+					<div class="col-md-1">
+						Month+/-<br> <input type="number" ng-init="smonth = 0"
+							min="-10" max="10" ng-model="smonth">
+					</div>
+					<div class="col-md-1">
+						Year+/-<br> <input type="number" ng-init="syear = 0"
+							min="-10" max="10" ng-model="syear">
+					</div>
+					<div class="col-md-3">
+						Results<br> <input type="text" ng-init="sres=null"
+							value="{{sres | date :'dd-MMM-yyyy'}}">
+					</div>
+					<div class="col-md-2">
+						<br> <a class="btn btn-default" ng-click="reset()">CLEAR</a>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						Ending Date Type<br> <select ng-model="selectedday2"
+							ng-options="x for x in days">
+						</select>
+					</div>
+					<div class="col-md-1">
+						Day+/-<br> <input type="number" ng-init="sday2 = 0" min="-10"
+							max="10" ng-model="sday2">
+					</div>
+					<div class="col-md-1">
+						Month+/-<br> <input type="number" ng-init="smonth2 = 0"
+							min="-10" max="10" ng-model="smonth2">
+					</div>
+					<div class="col-md-1">
+						Year+/-<br> <input type="number" ng-init="syear2 = 0"
+							min="-10" max="10" ng-model="syear2">
+					</div>
+					<div class="col-md-3">
+						Results<br> <input type="text" ng-init="sres2=null"
+							value="{{sres2 | date :'dd-MMM-yyyy'}}">
+					</div>
+					<div class="col-md-2">
+						<br> <a class="btn btn-default" ng-click="reset2()">CLEAR</a>
+					</div>
+				</div>
+				<br>
+			</div>
+			<div class="modal-footer">
+				<a type="button" class="btn btn-default" href="main1.html">CANCEL</a>
+				<!-- <button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button> -->
+				<a class="btn btn-default" ng-click="dateManipulation()">GET
+					RESULTS</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
